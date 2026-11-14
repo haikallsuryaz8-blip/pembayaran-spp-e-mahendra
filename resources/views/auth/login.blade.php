@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Pembayaran SPP - E.Mahendra</title>
+    <title>Login - Pembayaran SPP</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -32,7 +32,7 @@
                 <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 shadow-lg shadow-indigo-500/40 mb-4 border border-white/20">
                     <i class="fa-solid fa-graduation-cap text-2xl text-white"></i>
                 </div>
-                <h1 class="text-2xl font-extrabold tracking-tight text-white">Pembayaran SPP - E.Mahendra</h1>
+                <h1 class="text-2xl font-extrabold tracking-tight text-white">Pembayaran SPP</h1>
                 <p class="text-xs text-indigo-200/80 mt-1 font-medium tracking-wide">
                     SMK JAKARTA PUSAT 1 • Portal Resmi
                 </p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Sistem Pembayaran SPP') - Pembayaran SPP - E.Mahendra</title>
+    <title>@yield('title', 'Sistem Pembayaran SPP') - SMK JAKARTA PUSAT 1</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -32,7 +32,7 @@
                     </div>
                     <div>
                         <div class="flex items-center space-x-2">
-                            <span class="text-base sm:text-lg font-extrabold tracking-tight text-white">Pembayaran SPP - E.Mahendra</span>
+                            <span class="text-base sm:text-lg font-extrabold tracking-tight text-white">Pembayaran SPP</span>
                             <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border {{ auth('petugas')->check() ? (auth('petugas')->user()->level === 'admin' ? 'bg-amber-500/20 text-amber-300 border-amber-500/30' : 'bg-blue-500/20 text-blue-300 border-blue-500/30') : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' }}">
                                 {{ auth('petugas')->check() ? strtoupper(auth('petugas')->user()->level) : 'PORTAL SISWA' }}
                             </span>

@@ -30,7 +30,7 @@
 
     <div class="receipt">
         <div class="header">
-            <h2>PEMBAYARAN SPP - E.MAHENDRA</h2>
+            <h2>PEMBAYARAN SPP</h2>
             <p>SMK JAKARTA PUSAT 1 • BUKTI PEMBAYARAN RESMI</p>
             <p>No. Kuitansi: #SPP-{{ str_pad($pembayaran->id_pembayaran, 6, '0', STR_PAD_LEFT) }}</p>
         </div>

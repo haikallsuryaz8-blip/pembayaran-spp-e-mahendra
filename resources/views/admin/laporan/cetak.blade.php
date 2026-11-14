@@ -29,7 +29,7 @@
     </div>
 
     <div class="header">
-        <h2>LAPORAN PEMBAYARAN SPP - E.MAHENDRA</h2>
+        <h2>LAPORAN PEMBAYARAN SPP</h2>
         <p>SMK JAKARTA PUSAT 1 • TAHUN AJARAN 2026</p>
         <p style="font-size: 11px;">Tanggal Cetak: {{ date('d F Y') }}</p>
     </div>

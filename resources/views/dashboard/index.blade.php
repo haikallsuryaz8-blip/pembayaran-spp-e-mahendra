@@ -19,7 +19,7 @@
                     <span id="dynamicGreeting">Selamat Datang</span>, {{ auth('petugas')->user()->nama_petugas }}! 👋
                 </h1>
                 <p class="text-xs sm:text-sm text-indigo-200/80 leading-relaxed font-normal">
-                    Pusat monitoring keuangan Pembayaran SPP - E.Mahendra (SMK Jakarta Pusat 1). Pantau arus kas masuk, status pelunasan siswa, dan rekapitulasi 4 jurusan.
+                    Pusat monitoring keuangan Pembayaran SPP (SMK Jakarta Pusat 1). Pantau arus kas masuk, status pelunasan siswa, dan rekapitulasi 4 jurusan.
                 </p>
             </div>
 
