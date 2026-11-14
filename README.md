@@ -1,66 +1,94 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pembayaran SPP - E.Mahendra
+### Sistem Informasi Manajemen Pembayaran SPP • SMK JAKARTA PUSAT 1
+**Tahun Ajaran 2026**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Web Manajemen Pembayaran SPP terpadu yang dirancang untuk kebutuhan Uji Kompetensi Keahlian (UKK) Rekayasa Perangkat Lunak (RPL). Dilengkapi dengan manajemen multi-role (Admin, Petugas Kasir, Siswa), tracking pembayaran 12 bulan otomatis, cetak kuitansi thermal resmi format dual tanda tangan, rekapitulasi laporan, serta ekspor PDF dan Microsoft Excel.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 👨‍🎓 Identitas Pengembang
+- **Nama Siswa**: Haikal Suryadarmansyah
+- **NIS**: 12460
+- **NISN**: 0108879256
+- **Kelas**: XII RPL (Rekayasa Perangkat Lunak)
+- **Sekolah**: SMK JAKARTA PUSAT 1
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🏛️ Struktur Tarif SPP (SMK JAKARTA PUSAT 1)
+Tahun Ajaran 2026 (Semua tarif di atas Rp 400.000):
+| No | Jurusan | Nominal Per Bulan | Keterangan |
+|---|---|---|---|
+| 1 | **RPL** (Rekayasa Perangkat Lunak) | **Rp 600.000** | Tarif Tertinggi |
+| 2 | **AK** (Akuntansi) | **Rp 500.000** | Standard |
+| 3 | **MP** (Manajemen Perkantoran) | **Rp 450.000** | Standard |
+| 4 | **BR** (Bisnis Retail) | **Rp 420.000** | Standard |
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Fitur Unggulan
+1. **Multi-Guard Authentication**:
+   - **Administrator**: Akses penuh kelola Petugas, Siswa, SPP, Kelas, Entri Transaksi, dan Laporan.
+   - **Petugas (Kasir TU)**: Akses entri transaksi pembayaran SPP dan cetak kuitansi.
+   - **Siswa (Portal Mandiri)**: Akses monitoring tagihan, sisa tunggakan, dan matriks lunas 12 bulan secara mandiri.
+2. **Matrix Pembayaran 12 Bulan**:
+   - Tracking visual bulan Juli 2026 s/d Juni 2027.
+   - Pengecekan status real-time (*Lunas* vs *Belum Bayar*).
+3. **Cetak Bukti Pembayaran**:
+   - Kuitansi thermal resmi format dual tanda tangan (Tanda Tangan Kasir TU & Siswa).
+4. **Rekapitulasi & Export**:
+   - Filter laporan berdasarkan rentang tanggal, kelas, dan status.
+   - Cetak langsung dan Export ke format Microsoft Excel (`.xls`).
+5. **Modern Responsive UI**:
+   - Tailwind CSS, FontAwesome 6, Plus Jakarta Sans, dan Chart.js.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🔑 Akun Default untuk Pengujian
 
-## Laravel Sponsors
+### 1. Administrator
+- **Username**: `admin`
+- **Password**: `password` / `admin123`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Petugas (Kasir TU)
+- **Username**: `petugas`
+- **Password**: `password` / `petugas123`
 
-### Premium Partners
+### 3. Siswa (Portal Siswa)
+- **NISN**: `0108879256` (Haikal Suryadarmansyah - XII RPL)
+- **Password**: `0108879256` (atau NIS: `12460`)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 🛠️ Instalasi & Menjalankan Lokal
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Clone repository
+git clone https://github.com/haikallsuryaz8-blip/pembayaran-spp-e-mahendra.git
+cd pembayaran-spp-e-mahendra
 
-## Code of Conduct
+# Install dependencies
+composer install
+npm install && npm run build
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Setup Environment
+cp .env.example .env
+php artisan key:generate
 
-## Security Vulnerabilities
+# Migrasi & Seeder Database
+php artisan migrate:fresh --seed
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Jalankan Local Server
+php artisan serve
+```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🌐 Deploy Cloud (Railway / Render / Docker)
+Aplikasi ini sudah dilengkapi dengan `Dockerfile`, `Procfile`, dan `docker-entrypoint.sh` yang siap dideploy 24/7 di cloud hosting gratis seperti **Railway.app** atau **Render.com**.
+
+Dukungan database:
+- **MySQL / TiDB Serverless** (Rekomendasi Production)
+- **SQLite** (Zero-configuration mode)
+
+© 2026 **Pembayaran SPP - E.Mahendra** • SMK JAKARTA PUSAT 1
