@@ -23,14 +23,14 @@
 <body>
 
     <div class="no-print" style="text-align: center; margin-bottom: 15px;">
-        <button onclick="window.print()" style="padding: 8px 16px; background: #4f46e5; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
+        <button onclick="window.print()" style="padding: 8px 16px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
             Cetak Kuitansi
         </button>
     </div>
 
     <div class="receipt">
         <div class="header">
-            <h2>PEMBAYARAN SPP</h2>
+            <h2>PEMBAYARAN SPP INFINITY</h2>
             <p>SMK JAKARTA PUSAT 1 • BUKTI PEMBAYARAN RESMI</p>
             <p>No. Kuitansi: #SPP-{{ str_pad($pembayaran->id_pembayaran, 6, '0', STR_PAD_LEFT) }}</p>
         </div>

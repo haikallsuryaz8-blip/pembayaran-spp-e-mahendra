@@ -3,118 +3,114 @@
 @section('title', 'Dashboard Admin & Petugas')
 
 @section('content')
-<div class="space-y-7">
+<div class="space-y-6">
 
-    <!-- Top Action Bar & Dynamic Greeting (Dribbble FinTech Header) -->
-    <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl shadow-indigo-950/20 relative overflow-hidden border border-indigo-500/20">
-        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div class="space-y-2 max-w-2xl">
-                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold border border-white/15 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span class="text-indigo-200">Panel Kendali {{ strtoupper(auth('petugas')->user()->level) }}</span>
-                    <span class="text-white/40">•</span>
-                    <span class="text-emerald-300 font-semibold">Sistem Kasir Aktif</span>
+    <!-- Top Action Bar & Greeting (Clean Academic Executive Header) -->
+    <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+            <div class="space-y-1.5 max-w-2xl">
+                <div class="inline-flex items-center space-x-2 bg-slate-100 px-3 py-1 rounded-md text-xs font-semibold text-slate-700 border border-slate-200">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Panel Kendali {{ strtoupper(auth('petugas')->user()->level) }}</span>
+                    <span class="text-slate-300">•</span>
+                    <span class="text-blue-700">Tahun Ajaran 2026</span>
                 </div>
-                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
                     <span id="dynamicGreeting">Selamat Datang</span>, {{ auth('petugas')->user()->nama_petugas }}! 👋
                 </h1>
-                <p class="text-xs sm:text-sm text-indigo-200/80 leading-relaxed font-normal">
-                    Pusat monitoring keuangan Pembayaran SPP (SMK Jakarta Pusat 1). Pantau arus kas masuk, status pelunasan siswa, dan rekapitulasi 4 jurusan.
+                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                    Pusat monitoring keuangan Pembayaran SPP Infinity SMK Jakarta Pusat 1. Pantau arus kas masuk, status pelunasan siswa, dan rekapitulasi 4 jurusan.
                 </p>
             </div>
 
             <!-- Quick Action Buttons -->
-            <div class="flex flex-wrap items-center gap-3">
+            <div class="flex flex-wrap items-center gap-2.5">
                 <a href="{{ route('transaksi.index') }}" 
-                   class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm shadow-lg shadow-indigo-600/30 transition-all duration-150 flex items-center space-x-2 active:scale-95 border border-indigo-400/30">
-                    <i class="fa-solid fa-plus-circle text-base"></i>
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-sm transition-all duration-150 flex items-center space-x-2 active:scale-95">
+                    <i class="fa-solid fa-plus-circle text-sm"></i>
                     <span>Entri Pembayaran</span>
                 </a>
                 @if(auth('petugas')->user()->level === 'admin')
                     <a href="{{ route('laporan.index') }}" 
-                       class="bg-white/10 hover:bg-white/20 text-white font-bold px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm backdrop-blur-md transition-all duration-150 flex items-center space-x-2 border border-white/15">
-                        <i class="fa-solid fa-file-invoice-dollar text-indigo-300"></i>
+                       class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-150 flex items-center space-x-2 border border-slate-200">
+                        <i class="fa-solid fa-file-invoice-dollar text-slate-600"></i>
                         <span>Cetak Laporan</span>
                     </a>
                 @endif
             </div>
         </div>
-
-        <!-- Ambient Background Glows -->
-        <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -left-12 -top-12 w-64 h-64 bg-violet-500/15 rounded-full blur-3xl pointer-events-none"></div>
     </div>
 
-    <!-- 4 FinTech Metric Cards (Bento Modern Grid) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <!-- 4 Metric Cards (Clean Grid) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         
         <!-- Total Kas Terkumpul (All-Time) -->
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 group">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm">
             <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Kas Masuk</span>
-                <div class="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-inner">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Kas Masuk</span>
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-base">
                     <i class="fa-solid fa-vault"></i>
                 </div>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
+            <h3 class="text-2xl font-bold text-slate-900 mt-2.5">
                 Rp {{ number_format($totalKasAllTime, 0, ',', '.') }}
             </h3>
             <div class="mt-3 flex items-center justify-between text-xs pt-3 border-t border-slate-100">
-                <span class="text-slate-500 font-medium">Bulan Berjalan:</span>
-                <span class="font-bold text-indigo-600">Rp {{ number_format($totalTransaksiBulanIni, 0, ',', '.') }}</span>
+                <span class="text-slate-500">Bulan Berjalan:</span>
+                <span class="font-bold text-blue-600">Rp {{ number_format($totalTransaksiBulanIni, 0, ',', '.') }}</span>
             </div>
         </div>
 
         <!-- Partisipasi Pembayaran Siswa -->
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 group">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm">
             <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Siswa Sudah Bayar</span>
-                <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-inner">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Siswa Sudah Bayar</span>
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base">
                     <i class="fa-solid fa-user-check"></i>
                 </div>
             </div>
-            <div class="flex items-baseline space-x-2 mt-3">
-                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">{{ $siswaSudahBayarCount }}</h3>
-                <span class="text-xs text-slate-400 font-semibold">/ {{ $totalSiswa }} Siswa</span>
+            <div class="flex items-baseline space-x-1.5 mt-2.5">
+                <h3 class="text-2xl font-bold text-slate-900">{{ $siswaSudahBayarCount }}</h3>
+                <span class="text-xs text-slate-400 font-medium">/ {{ $totalSiswa }} Siswa</span>
             </div>
             <!-- Progress Bar -->
             <div class="mt-3 pt-3 border-t border-slate-100">
-                <div class="flex justify-between text-xs mb-1 font-semibold">
-                    <span class="text-slate-500">Tingkat Partisipasi</span>
-                    <span class="text-emerald-600">{{ $persentasePartisipasi }}%</span>
+                <div class="flex justify-between text-xs mb-1 font-medium">
+                    <span class="text-slate-500">Partisipasi</span>
+                    <span class="text-emerald-700 font-semibold">{{ $persentasePartisipasi }}%</span>
                 </div>
                 <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                    <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full transition-all duration-500" style="width: {{ max($persentasePartisipasi, 5) }}%"></div>
+                    <div class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: {{ max($persentasePartisipasi, 5) }}%"></div>
                 </div>
             </div>
         </div>
 
         <!-- Rombel & Kelas -->
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 group">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm">
             <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Rombel Kelas</span>
-                <div class="w-11 h-11 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-inner">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Rombel Kelas</span>
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-base">
                     <i class="fa-solid fa-school"></i>
                 </div>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">{{ $totalKelas }} Kelas</h3>
-            <div class="mt-3 flex items-center space-x-2 text-xs pt-3 border-t border-slate-100 text-slate-500 font-medium">
+            <h3 class="text-2xl font-bold text-slate-900 mt-2.5">{{ $totalKelas }} Kelas</h3>
+            <div class="mt-3 flex items-center space-x-2 text-xs pt-3 border-t border-slate-100 text-slate-500">
                 <span class="w-2 h-2 rounded-full bg-purple-500"></span>
                 <span>Tingkat X, XI, XII (4 Jurusan)</span>
             </div>
         </div>
 
         <!-- Operator Kasir / TU -->
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 group">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm">
             <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Petugas & Admin</span>
-                <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-inner">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Petugas & Admin</span>
+                <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-base">
                     <i class="fa-solid fa-users-gear"></i>
                 </div>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">{{ $totalPetugas }} Akun</h3>
-            <div class="mt-3 flex items-center justify-between text-xs pt-3 border-t border-slate-100 text-slate-500 font-medium">
-                <span class="flex items-center space-x-1 text-emerald-600 font-semibold">
+            <h3 class="text-2xl font-bold text-slate-900 mt-2.5">{{ $totalPetugas }} Akun</h3>
+            <div class="mt-3 flex items-center justify-between text-xs pt-3 border-t border-slate-100 text-slate-500">
+                <span class="flex items-center space-x-1 text-emerald-700 font-semibold">
                     <i class="fa-solid fa-circle-check text-[10px]"></i>
                     <span>Multi-Guard Aktif</span>
                 </span>
@@ -124,25 +120,20 @@
 
     </div>
 
-    <!-- Charts & Analytics Section (Dribbble Split Layout) -->
+    <!-- Charts & Analytics Section -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- Left Wide Chart: Tren Arus Kas Masuk 12 Bulan (Gradient Area Line Chart) -->
-        <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-sm">
+        <!-- Left Wide Chart: Tren Arus Kas Masuk 12 Bulan -->
+        <div class="lg:col-span-2 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
                 <div>
                     <div class="flex items-center space-x-2">
-                        <h3 class="font-extrabold text-slate-900 text-base">Arus Kas Masuk Bulanan</h3>
-                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">
+                        <h3 class="font-bold text-slate-900 text-base">Arus Kas Masuk Bulanan</h3>
+                        <span class="px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">
                             Tahun 2026
                         </span>
                     </div>
                     <p class="text-xs text-slate-400 mt-0.5">Grafik akumulasi pembayaran SPP siswa per bulan kalender</p>
-                </div>
-                <div class="flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-slate-50 p-1.5 rounded-xl border border-slate-100">
-                    <span class="px-2.5 py-1 rounded-lg bg-white text-indigo-700 shadow-sm">
-                        <i class="fa-solid fa-chart-area mr-1 text-indigo-600"></i> Tren Bulanan
-                    </span>
                 </div>
             </div>
             <div class="h-64 sm:h-72">
@@ -151,13 +142,11 @@
         </div>
 
         <!-- Right Chart: Perbandingan Kas Masuk 4 Jurusan -->
-        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div>
-                <div class="flex items-center justify-between mb-4">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 text-base">Kontribusi Kas per Jurusan</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Akumulasi penerimaan SPP</p>
-                    </div>
+                <div class="mb-4">
+                    <h3 class="font-bold text-slate-900 text-base">Kontribusi Kas per Jurusan</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Akumulasi penerimaan SPP 4 kejuruan</p>
                 </div>
 
                 <div class="h-44 flex items-center justify-center my-2">
@@ -165,131 +154,123 @@
                 </div>
             </div>
 
-            <!-- List Progress Breakdown Jurusan -->
-            <div class="space-y-3 pt-4 border-t border-slate-100">
+            <!-- List Breakdown Jurusan -->
+            <div class="space-y-2.5 pt-4 border-t border-slate-100">
                 <!-- RPL -->
-                <div>
-                    <div class="flex justify-between text-xs font-semibold mb-1">
-                        <span class="flex items-center space-x-1.5 text-slate-700">
-                            <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
-                            <span>RPL (Rp 600.000 / bln)</span>
-                        </span>
-                        <span class="font-extrabold text-slate-900">Rp {{ number_format($jurusanStats['RPL'], 0, ',', '.') }}</span>
-                    </div>
+                <div class="flex justify-between text-xs font-medium">
+                    <span class="flex items-center space-x-2 text-slate-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                        <span>RPL (Rp 600.000 / bln)</span>
+                    </span>
+                    <span class="font-bold text-slate-900">Rp {{ number_format($jurusanStats['RPL'], 0, ',', '.') }}</span>
                 </div>
                 <!-- AK -->
-                <div>
-                    <div class="flex justify-between text-xs font-semibold mb-1">
-                        <span class="flex items-center space-x-1.5 text-slate-700">
-                            <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
-                            <span>AK (Rp 500.000 / bln)</span>
-                        </span>
-                        <span class="font-extrabold text-slate-900">Rp {{ number_format($jurusanStats['AK'], 0, ',', '.') }}</span>
-                    </div>
+                <div class="flex justify-between text-xs font-medium">
+                    <span class="flex items-center space-x-2 text-slate-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
+                        <span>AK (Rp 500.000 / bln)</span>
+                    </span>
+                    <span class="font-bold text-slate-900">Rp {{ number_format($jurusanStats['AK'], 0, ',', '.') }}</span>
                 </div>
                 <!-- MP -->
-                <div>
-                    <div class="flex justify-between text-xs font-semibold mb-1">
-                        <span class="flex items-center space-x-1.5 text-slate-700">
-                            <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                            <span>MP (Rp 450.000 / bln)</span>
-                        </span>
-                        <span class="font-extrabold text-slate-900">Rp {{ number_format($jurusanStats['MP'], 0, ',', '.') }}</span>
-                    </div>
+                <div class="flex justify-between text-xs font-medium">
+                    <span class="flex items-center space-x-2 text-slate-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+                        <span>MP (Rp 450.000 / bln)</span>
+                    </span>
+                    <span class="font-bold text-slate-900">Rp {{ number_format($jurusanStats['MP'], 0, ',', '.') }}</span>
                 </div>
                 <!-- BR -->
-                <div>
-                    <div class="flex justify-between text-xs font-semibold mb-1">
-                        <span class="flex items-center space-x-1.5 text-slate-700">
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-                            <span>BR (Rp 420.000 / bln)</span>
-                        </span>
-                        <span class="font-extrabold text-slate-900">Rp {{ number_format($jurusanStats['BR'], 0, ',', '.') }}</span>
-                    </div>
+                <div class="flex justify-between text-xs font-medium">
+                    <span class="flex items-center space-x-2 text-slate-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                        <span>BR (Rp 420.000 / bln)</span>
+                    </span>
+                    <span class="font-bold text-slate-900">Rp {{ number_format($jurusanStats['BR'], 0, ',', '.') }}</span>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Bottom Section: Transaksi Kasir Terkini (Full Width Luas & Bersih) -->
-    <div class="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 sm:p-7">
-            <div class="flex items-center justify-between mb-5">
-                <div>
-                    <h3 class="font-extrabold text-slate-900 text-base">Aktivitas Transaksi Kasir</h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Daftar pembayaran SPP yang baru saja diverifikasi dan masuk sistem</p>
-                </div>
-                <a href="{{ route('transaksi.history') }}" 
-                   class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1.5 bg-indigo-50 hover:bg-indigo-100 px-3.5 py-2 rounded-xl transition">
-                    <span>Semua History</span>
-                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </a>
+    <!-- Bottom Section: Transaksi Kasir Terkini -->
+    <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-5">
+            <div>
+                <h3 class="font-bold text-slate-900 text-base">Aktivitas Transaksi Kasir</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Daftar pembayaran SPP yang baru saja diverifikasi dan masuk sistem</p>
             </div>
+            <a href="{{ route('transaksi.history') }}" 
+               class="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center space-x-1.5 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition">
+                <span>Semua History</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse text-sm">
-                    <thead>
-                        <tr class="border-b border-slate-100 text-xs text-slate-400 uppercase tracking-wider">
-                            <th class="py-3 px-3 font-bold">Siswa & Kelas</th>
-                            <th class="py-3 px-3 font-bold">Bulan SPP</th>
-                            <th class="py-3 px-3 font-bold">Nominal</th>
-                            <th class="py-3 px-3 font-bold">Petugas</th>
-                            <th class="py-3 px-3 text-right font-bold">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100">
-                        @forelse($transaksiTerbaru as $trx)
-                            <tr class="hover:bg-slate-50/80 transition-colors">
-                                <td class="py-3.5 px-3">
-                                    <div class="flex items-center space-x-3">
-                                        <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center font-extrabold text-xs shadow-sm">
-                                            {{ strtoupper(substr($trx->siswa->nama ?? 'S', 0, 2)) }}
-                                        </div>
-                                        <div>
-                                            <div class="font-bold text-slate-900 text-xs sm:text-sm">{{ $trx->siswa->nama ?? 'Siswa Terhapus' }}</div>
-                                            <div class="text-[11px] text-slate-400 flex items-center space-x-1.5 mt-0.5">
-                                                <span>{{ $trx->siswa->kelas->nama_kelas ?? '-' }}</span>
-                                                <span>•</span>
-                                                <span>NISN: {{ $trx->nisn }}</span>
-                                            </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                    <tr class="border-b border-slate-200 text-xs text-slate-500 uppercase tracking-wider bg-slate-50/50">
+                        <th class="py-3 px-3.5 font-semibold">Siswa & Kelas</th>
+                        <th class="py-3 px-3.5 font-semibold">Bulan SPP</th>
+                        <th class="py-3 px-3.5 font-semibold">Nominal</th>
+                        <th class="py-3 px-3.5 font-semibold">Petugas</th>
+                        <th class="py-3 px-3.5 text-right font-semibold">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    @forelse($transaksiTerbaru as $trx)
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-3.5">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">
+                                        {{ strtoupper(substr($trx->siswa->nama ?? 'S', 0, 2)) }}
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-900 text-xs sm:text-sm">{{ $trx->siswa->nama ?? 'Siswa Terhapus' }}</div>
+                                        <div class="text-[11px] text-slate-400 flex items-center space-x-1.5 mt-0.5">
+                                            <span>{{ $trx->siswa->kelas->nama_kelas ?? '-' }}</span>
+                                            <span>•</span>
+                                            <span>NISN: {{ $trx->nisn }}</span>
                                         </div>
                                     </div>
-                                </td>
-                                <td class="py-3.5 px-3">
-                                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700">
-                                        {{ $trx->bulan_dibayar }} {{ $trx->tahun_dibayar }}
-                                    </span>
-                                </td>
-                                <td class="py-3.5 px-3 font-extrabold text-emerald-600 text-xs sm:text-sm">
-                                    Rp {{ number_format($trx->jumlah_bayar, 0, ',', '.') }}
-                                </td>
-                                <td class="py-3.5 px-3 text-xs text-slate-600">
-                                    <span class="flex items-center space-x-1.5">
-                                        <i class="fa-solid fa-user-check text-slate-400 text-[11px]"></i>
-                                        <span>{{ $trx->petugas->nama_petugas ?? 'Petugas' }}</span>
-                                    </span>
-                                </td>
-                                <td class="py-3.5 px-3 text-right">
-                                    <a href="{{ route('transaksi.kuitansi', $trx->id_pembayaran) }}" target="_blank"
-                                       class="inline-flex items-center px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-indigo-600 hover:text-white transition shadow-sm">
-                                        <i class="fa-solid fa-print mr-1 text-[11px]"></i>
-                                        <span>Kuitansi</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" class="py-8 text-center text-slate-400 text-xs">Belum ada transaksi pembayaran</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+                                </div>
+                            </td>
+                            <td class="py-3.5 px-3.5">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">
+                                    {{ $trx->bulan_dibayar }} {{ $trx->tahun_dibayar }}
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-3.5 font-bold text-emerald-700 text-xs sm:text-sm">
+                                Rp {{ number_format($trx->jumlah_bayar, 0, ',', '.') }}
+                            </td>
+                            <td class="py-3.5 px-3.5 text-xs text-slate-600">
+                                <span class="flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-user-check text-slate-400 text-[11px]"></i>
+                                    <span>{{ $trx->petugas->nama_petugas ?? 'Petugas' }}</span>
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-3.5 text-right">
+                                <a href="{{ route('transaksi.kuitansi', $trx->id_pembayaran) }}" target="_blank"
+                                   class="inline-flex items-center px-2.5 py-1.5 rounded-lg text-xs font-medium bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition shadow-sm">
+                                    <i class="fa-solid fa-print mr-1 text-[11px]"></i>
+                                    <span>Kuitansi</span>
+                                </a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="5" class="py-8 text-center text-slate-400 text-xs">Belum ada transaksi pembayaran</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
-
     </div>
 
-<!-- Inisialisasi Chart.js Modern FinTech -->
+</div>
+
+<!-- Inisialisasi Chart.js Clean Academic -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Dynamic Greeting
@@ -302,13 +283,12 @@
         const greetEl = document.getElementById('dynamicGreeting');
         if (greetEl) greetEl.innerText = greeting;
 
-        // 1. Chart Tren Arus Kas Masuk 12 Bulan (Gradient Area Line Chart Dribbble Style)
+        // 1. Chart Tren Arus Kas Masuk 12 Bulan (Clean Academic Line Chart)
         const ctxTren = document.getElementById('chartTrenBulanan').getContext('2d');
         
-        // Gradient Fill
         const gradientFill = ctxTren.createLinearGradient(0, 0, 0, 300);
-        gradientFill.addColorStop(0, 'rgba(79, 70, 229, 0.35)');
-        gradientFill.addColorStop(1, 'rgba(79, 70, 229, 0.00)');
+        gradientFill.addColorStop(0, 'rgba(37, 99, 235, 0.15)');
+        gradientFill.addColorStop(1, 'rgba(37, 99, 235, 0.00)');
 
         new Chart(ctxTren, {
             type: 'line',
@@ -317,16 +297,16 @@
                 datasets: [{
                     label: 'Kas Diterima (Rp)',
                     data: {!! json_encode($trenBulananData) !!},
-                    borderColor: '#4f46e5',
-                    borderWidth: 3,
+                    borderColor: '#2563eb',
+                    borderWidth: 2.5,
                     fill: true,
                     backgroundColor: gradientFill,
-                    tension: 0.4,
+                    tension: 0.3,
                     pointBackgroundColor: '#ffffff',
-                    pointBorderColor: '#4f46e5',
+                    pointBorderColor: '#2563eb',
                     pointBorderWidth: 2,
-                    pointRadius: 5,
-                    pointHoverRadius: 7
+                    pointRadius: 4,
+                    pointHoverRadius: 6
                 }]
             },
             options: {
@@ -335,11 +315,11 @@
                 plugins: {
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: '#0f172a',
+                        backgroundColor: '#1e293b',
                         titleColor: '#94a3b8',
                         bodyColor: '#ffffff',
-                        padding: 12,
-                        cornerRadius: 12,
+                        padding: 10,
+                        cornerRadius: 8,
                         callbacks: {
                             label: function(context) {
                                 return 'Kas Masuk: Rp ' + context.parsed.y.toLocaleString('id-ID');
@@ -369,7 +349,7 @@
             }
         });
 
-        // 2. Donut Chart Kontribusi per Jurusan (FinTech Doughnut)
+        // 2. Donut Chart Kontribusi per Jurusan
         const ctxDonut = document.getElementById('chartKontribusiJurusan').getContext('2d');
         const dataJurusan = [
             {{ $jurusanStats['RPL'] ?? 0 }},
@@ -378,7 +358,6 @@
             {{ $jurusanStats['BR'] ?? 0 }}
         ];
 
-        // Jika semua data 0, tampilkan default seimbang untuk visualisasi
         const hasData = dataJurusan.some(val => val > 0);
         const finalData = hasData ? dataJurusan : [600000, 500000, 450000, 420000];
 
@@ -388,21 +367,22 @@
                 labels: ['RPL', 'AK', 'MP', 'BR'],
                 datasets: [{
                     data: finalData,
-                    backgroundColor: ['#4f46e5', '#a855f7', '#3b82f6', '#f59e0b'],
-                    borderWidth: 0,
-                    hoverOffset: 6
+                    backgroundColor: ['#2563eb', '#7c3aed', '#0284c7', '#d97706'],
+                    borderWidth: 2,
+                    borderColor: '#ffffff',
+                    hoverOffset: 4
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                cutout: '74%',
+                cutout: '72%',
                 plugins: { 
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: '#0f172a',
-                        padding: 10,
-                        cornerRadius: 10,
+                        backgroundColor: '#1e293b',
+                        padding: 8,
+                        cornerRadius: 8,
                         callbacks: {
                             label: function(context) {
                                 return context.label + ': Rp ' + context.parsed.toLocaleString('id-ID');
